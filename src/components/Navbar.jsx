@@ -3,6 +3,8 @@ import React, { useContext } from 'react'
 import { auth } from '../firebase'
 import { AuthContext } from '../context/AuthContext'
 
+
+
 const Navbar = () => {
   const { currentUser } = useContext(AuthContext)
 
@@ -15,6 +17,7 @@ const Navbar = () => {
         <span>{currentUser.displayName}</span>
         <button onClick={() => signOut(auth)}>Logout</button>
       </div>
+      
     </div>
   )
 }

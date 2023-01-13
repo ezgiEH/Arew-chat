@@ -1,3 +1,14 @@
+$darkColor: #2f2d52;
+$stormcloud: #4f6367;
+$weldonblue: #7a9e9f;
+$columbablue: #b8d8d8;
+$beige: #eef5db;
+$sunset: #fe5f55;
+
+$shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+$fontJosefin: 'Josefin Sans', sans-serif;
+
+
 @mixin mobile {
     @media screen and (max-width: 500px) {
         @content;
@@ -17,9 +28,9 @@
     }
 }
 
-$darkColor: #2f2d52;
-
-
+body {
+    font-family: $fontJosefin;
+}
 
 // REGISTER AND LOGIN PAGE
 .formContainer {
@@ -37,6 +48,10 @@ $darkColor: #2f2d52;
         flex-direction: column;
         gap: 10px;
         align-items: center;
+
+        @include mobile {
+            padding: 30px 30px;
+        }
 
         .logo {
             color: #5d5b8d;
@@ -74,6 +89,11 @@ $darkColor: #2f2d52;
                 cursor: pointer;
             }
 
+            span {
+                color: $sunset;
+                text-align: center;
+            }
+
             label {
                 display: flex;
                 align-items: center;
@@ -108,12 +128,12 @@ $darkColor: #2f2d52;
     justify-content: center;
 
     .container {
-        border: 1px solid white;
         border-radius: 10px;
         width: 65%;
         height: 80%;
         display: flex;
         overflow: hidden;
+        box-shadow: $shadow;
 
         @include mobile {
             width: 90%;
@@ -123,6 +143,60 @@ $darkColor: #2f2d52;
             flex: 1;
             background-color: #3e3c61;
             position: relative;
+
+            @include mobile {
+                &.isOpen {
+
+                    width: 60%;
+
+                    .arrow {
+                        rotate: 180deg;
+                    }
+                }
+
+                &.isClose {
+                    flex: .5;
+
+                    .navbar {
+                        span {
+                            display: none;
+                        }
+                    }
+
+                    .search {
+                        display: none;
+                    }
+
+                    .userChat {
+                        .userChatInfo {
+                            display: none;
+                        }
+
+                        img {
+                            width: 45px;
+                            height: 45px;
+                        }
+                    }
+
+                    .arrow {
+                        right: 0;
+                    }
+                }
+            }
+
+            .arrow {
+                display: none;
+
+                @include mobile {
+                    display: flex;
+                    position: absolute;
+                    right: 10px;
+                    top: 5%;
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+            }
 
             .navbar {
                 display: flex;
@@ -134,6 +208,7 @@ $darkColor: #2f2d52;
                 padding: 10px;
 
                 .logo {
+                    font-size: 24px;
                     font-weight: bold;
 
                     @include mobile {
@@ -143,21 +218,24 @@ $darkColor: #2f2d52;
 
                 .user {
                     display: flex;
+                    align-items: center;
                     gap: 10px;
 
                     img {
                         background-color: #ddddf7;
-                        height: 24px;
-                        width: 24px;
+                        height: 30px;
+                        width: 30px;
                         border-radius: 50%;
                         object-fit: cover;
                     }
 
                     button {
+                        padding: 5px 10px;
                         background-color: #5d5b8d;
                         color: #ddddf7;
                         font-size: 10px;
                         border: none;
+                        border-radius: 10px;
                         cursor: pointer;
 
                         @include mobile {
@@ -166,6 +244,7 @@ $darkColor: #2f2d52;
                         }
                     }
                 }
+
             }
 
             .search {
@@ -252,7 +331,7 @@ $darkColor: #2f2d52;
 
                 .message {
                     display: flex;
-                    gap: 20px;
+                    gap: 10px;
                     margin-bottom: 20px;
 
                     .messageInfo {
@@ -266,6 +345,10 @@ $darkColor: #2f2d52;
                             border-radius: 50%;
                             object-fit: cover;
                         }
+                    }
+
+                    span {
+                        font-size: 12px;
                     }
 
                     .messageContent {
@@ -293,6 +376,7 @@ $darkColor: #2f2d52;
 
                         .messageContent {
                             align-items: flex-end;
+
                         }
 
                         p {
@@ -317,7 +401,7 @@ $darkColor: #2f2d52;
                     border: none;
                     outline: none;
                     color: $darkColor;
-                    font-size: 18px;
+                    font-size: clamp(12px, 2.5vw, 18px);
 
                     &::placeholder {
                         color: #ddddf7;
@@ -331,7 +415,7 @@ $darkColor: #2f2d52;
                     gap: 10px;
 
                     img {
-                        height: 24px;
+                        height: clamp(20px, 2.5vw, 24px);
                         cursor: pointer;
                     }
 
@@ -341,6 +425,8 @@ $darkColor: #2f2d52;
                         color: #ddddf7;
                         background-color: #8da4f1;
                         font-weight: bold;
+                        border-radius: 10px;
+                        box-shadow: $shadow;
                     }
                 }
             }
