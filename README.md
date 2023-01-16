@@ -1,3 +1,25 @@
+# [Arew Chat](https://arewchat.netlify.app/)
+
+<table>
+  <tr>
+    <th>
+      <img align="center" src="https://github.com/ezgiEH/Arew-chat/blob/master/ss/login.png" />
+      </th>
+    <th>
+      <img align="center" src="https://github.com/ezgiEH/Arew-chat/blob/master/ss/register.png" />
+     </th>
+  </tr>
+  <tr>
+    <th>
+      <img align="center" src="https://github.com/ezgiEH/Arew-chat/blob/master/ss/home.png" />
+      </th>
+    <th>
+      <img align="center" src="https://github.com/ezgiEH/Arew-chat/blob/master/ss/chat.png" />
+     </th>
+  </tr>
+</table>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
